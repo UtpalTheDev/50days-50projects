@@ -9,6 +9,7 @@
     position:relative;
     display:flex;
     justify-content:space-between;
+    
     width:350px;
     max-width:100%;
     margin-bottom: 20px;
@@ -16,12 +17,28 @@
 .progress-container{
     text-align:center;
 }
+.progress-flex::before{
+    content:'';
+    position:absolute;   
+    width:100%;
+    background-color:rgb(209, 209, 209);
+    height:4px;
+    top:50%;
+    z-index:-1;
+   }
 .progressbar{
  position:absolute;   
- width:50%;
+ width:10%;
  background-color:gray;
  height:4px;
- top:35%;
- /*transform:translateY(-50%);*/
+ top:50%;
+ left:0;
+ transform:translateY(-50%);
  z-index:-1;
+ transition:.4s ease;
+}
+.eachprogress{
+    background-color:white;
+    width:0px;
+    height:0px;
 }
