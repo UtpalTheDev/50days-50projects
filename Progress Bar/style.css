@@ -6,8 +6,9 @@
     height:100vh;
 }
 .progress-flex{
+    position:relative;
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
     width:350px;
     max-width:100%;
     margin-bottom: 20px;
@@ -15,4 +16,12 @@
 .progress-container{
     text-align:center;
 }
-
+.progressbar{
+ position:absolute;   
+ width:50%;
+ background-color:gray;
+ height:4px;
+ top:35%;
+ /*transform:translateY(-50%);*/
+ z-index:-1;
+}
