@@ -33,6 +33,7 @@ nav{
 }
 .movieimg{
     width:inherit;
+    
 }
 main{
     display:flex;
@@ -63,6 +64,7 @@ main{
     left:0;
     right:0;
     bottom:0;
+    max-height:80%;
     transition:transform 0.4s ease;
 
  transform:translateY(101%);
@@ -71,4 +73,10 @@ main{
 .moviewrapper:hover .movieoverview{
     transform:translateY(0);
     transition:transform 0.4s ease;
+}
+.link{
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
 }
