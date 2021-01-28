@@ -63,11 +63,12 @@ main{
     left:0;
     right:0;
     bottom:0;
-    display:none;
-   /* transform:translateY(101%);*/
+    transition:transform 0.4s ease;
+
+ transform:translateY(101%);
 }
 
 .moviewrapper:hover .movieoverview{
-   /* transform:translateY(0);*/
-   display:block;
+    transform:translateY(0);
+    transition:transform 0.4s ease;
 }
