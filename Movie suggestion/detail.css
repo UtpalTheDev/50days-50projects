@@ -1,0 +1,61 @@
+:root{
+    
+}
+body{
+    margin:0;
+}
+.container-1{
+width:100%;
+height:400px;
+display:flex;
+}
+.poster{
+    width:250px;
+    margin-right:20px;
+}
+.desc{
+    width:100%;
+}
+.posterimg{
+    width:250px;
+    height:300px;
+}
+.genre{
+    display:flex;
+}
+.genrediv{
+  
+}
+.container-2{
+    width:90vw;
+    margin:0 auto;
+    height:220px;
+    display:flex;
+    justify-content: space-between;
+    overflow:auto;
+}
+.container-2>div{
+    margin:0 10px;
+}
+.iframe{
+    border:0;
+
+}
+.container-3{
+display:flex;
+justify-content: space-between;
+height:500px;
+overflow:auto;
+}
+.overview{
+    width:50%;
+}
+.cast{
+display:flex;
+height:85px;
+}
+
+.container-4{
+
+}
+
