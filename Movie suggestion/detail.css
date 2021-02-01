@@ -20,6 +20,20 @@ display:flex;
     width:250px;
     height:300px;
 }
+.similarmovie{
+    width:50%;
+    height:100%;
+    display:flex;
+    flex-wrap:wrap;
+
+}
+.similardiv{
+position:relative;
+height:35%;
+}
+.similarimg{
+    height:100%;
+}
 .genre{
     display:flex;
 }
@@ -44,15 +58,26 @@ display:flex;
 .container-3{
 display:flex;
 justify-content: space-between;
-height:500px;
-overflow:auto;
+
 }
 .overview{
     width:50%;
 }
-.cast{
+.castdiv{
 display:flex;
+width:30%;
+flex-wrap:wrap;
+height:500px;
+overflow:auto;
+}
+.cast{
+    height:85px;
+    width:100%;
+    display:flex;
+}
+.casting{
 height:85px;
+
 }
 
 .container-4{

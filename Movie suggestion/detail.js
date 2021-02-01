@@ -9,7 +9,7 @@ var releasedate=document.querySelector(".releasedate");
 var cont2=document.querySelector(".container-2");
 var castdiv=document.querySelector(".castdiv");
 var overview=document.querySelector(".overview");
-
+var similarmovie=document.querySelector(".similarmovie");
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -42,6 +42,22 @@ function call(search_url){
     })
     .catch(errorhandle)
        
+}
+similar();
+function similar(){
+    const similar_url=`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${api}&language=en-US&page=1`;
+    fetch(similar_url)
+    .then(response=>response.json())
+    .then(json=>{
+        var data=json.results;
+        for(var i=0;i<6;i++){
+            const {id,poster_path,title}=data[i];
+            var div=document.createElement('div');
+            div.classList.add('similardiv');
+            div.innerHTML=`<img src='${img_path}200${poster_path}' class='similarimg'><a href="detail.html?#########rtddrrdr#%%%%%%%=${id}" target="_blank"></a>`;
+            similarmovie.appendChild(div);
+        }
+    })
 }
 
 function settitle(gettitle){
@@ -81,7 +97,7 @@ function setvideo(){
   
 }
 function setoverview(over){
-    overview.innerHTML=`${overview}`;
+    overview.innerHTML=`${over}`;
 
 }
 
