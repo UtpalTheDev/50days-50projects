@@ -10,6 +10,7 @@ var cont2=document.querySelector(".container-2");
 var castdiv=document.querySelector(".castdiv");
 var overview=document.querySelector(".overview");
 var similarmovie=document.querySelector(".similarmovie");
+var reviewdiv=document.querySelector(".review");
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -54,7 +55,7 @@ function similar(){
             const {id,poster_path,title}=data[i];
             var div=document.createElement('div');
             div.classList.add('similardiv');
-            div.innerHTML=`<img src='${img_path}200${poster_path}' class='similarimg'><a href="detail.html?#########rtddrrdr#%%%%%%%=${id}" target="_blank"></a>`;
+            div.innerHTML=`<a href="detail.html?#########rtddrrdr#%%%%%%%=${id}" target="_blank" class="link"></a><img src='${img_path}200${poster_path}' class='similarimg'>`;
             similarmovie.appendChild(div);
         }
     })
@@ -139,6 +140,32 @@ function cast(){
             div.innerHTML=`<img src='${img_path}200${profile_path}'  class='casting'><div class='castdesc'><div class=''castname>${name}</div>`;
             castdiv.appendChild(div);
             }
+        })
+    })
+}
+review();
+function review(){
+    const review_url=`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${api}`;
+    fetch(review_url)
+    .then(response=>response.json())
+    .then(json=>{
+        (json.results).forEach(item=>{
+            const {author,author_details,content,created_at}=item;
+            var profile=author_details.avatar_path;
+            var rating=author_details.rating;
+            var div=document.createElement('div');
+            div.classList.add('review');
+            div.innerHTML=`<div class="reviewpack">
+            <div class="image">
+            <img src='${img_path}200${profile}'  class='avatar'>
+            </div>
+            <div class="revcontent">
+            ${author}
+            ${content}
+            ${created_at}
+            </div>
+            </div>`;
+            reviewdiv.appendChild(div);
         })
     })
 }
