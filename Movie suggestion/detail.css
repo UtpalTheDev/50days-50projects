@@ -30,6 +30,13 @@ display:flex;
 .similardiv{
 position:relative;
 height:35%;
+margin:0 10px;
+}
+.link{
+    display:block;
+    position:absolute;
+    width:100%;
+    height:100%;
 }
 .similarimg{
     height:100%;
@@ -45,7 +52,7 @@ height:35%;
     margin:0 auto;
     height:220px;
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     overflow:auto;
 }
 .container-2>div{
@@ -60,8 +67,11 @@ display:flex;
 justify-content: space-between;
 
 }
-.overview{
+.overviewcont{
     width:50%;
+}
+.overview,.review{
+    width:100%;
 }
 .castdiv{
 display:flex;
