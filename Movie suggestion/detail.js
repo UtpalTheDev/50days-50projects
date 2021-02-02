@@ -132,6 +132,7 @@ function cast(){
     fetch(cast_url)
     .then(response=>response.json())
     .then(json=>{
+        console.log(json);
         (json.cast).forEach(item=>{
             var {name,profile_path,character}=item;
             if(profile_path!=null){
@@ -143,6 +144,8 @@ function cast(){
         })
     })
 }
+
+
 review();
 function review(){
     const review_url=`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${api}`;
@@ -169,6 +172,14 @@ function review(){
         })
     })
 }
+
+var bt=document.querySelector(".button");
+var pos=0;
+bt.addEventListener('click',()=>{
+   pos+=200;
+   cont2.scrollLeft=pos;
+})
+
 function errorhandle(){
     console.log('error');
 }
