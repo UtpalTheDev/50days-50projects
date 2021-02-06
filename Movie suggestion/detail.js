@@ -11,6 +11,7 @@ var castdiv=document.querySelector(".castdiv");
 var overview=document.querySelector(".overview");
 var similarmovie=document.querySelector(".similarmovie");
 var reviewdiv=document.querySelector(".review");
+var btn=document.querySelector(".button");
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -94,6 +95,16 @@ function setvideo(){
             src='https://www.youtube.com/embed/${key}'>`;
             cont2.appendChild(div);
         })
+        overflow();
+        function overflow(){
+            console.log(cont2.scrollWidth);
+            if(cont2.scrollWidth>cont2.clientWidth){
+                console.log(true);
+                btn.style.display=`block`;
+
+            }
+        }
+         
     })
   
 }
@@ -183,5 +194,7 @@ bt.addEventListener('click',()=>{
 function errorhandle(){
     console.log('error');
 }
+
+
 
 
