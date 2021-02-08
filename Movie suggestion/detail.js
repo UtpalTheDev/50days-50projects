@@ -186,9 +186,18 @@ function review(){
 
 var bt=document.querySelector(".button");
 var pos=0;
+var prev;
+cont2.scrollLeft=0;
 bt.addEventListener('click',()=>{
-   pos+=200;
+    prev=pos;
+    pos+=200;
    cont2.scrollLeft=pos;
+   console.log("pos"+pos+"cont"+cont2.scrollLeft);
+   if(pos>cont2.scrollLeft){
+       console.log('ll');
+    cont2.scrollLeft=cont2.scrollWidth-cont2.scrollLeft;
+
+   }
 })
 
 function errorhandle(){

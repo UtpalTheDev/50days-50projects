@@ -16,10 +16,12 @@ flex-wrap: wrap;
     width:20%;
     margin-right:20px;
     margin-top:15px;
+    min-width:250px;
 }
 .desc{
     margin-top:15px;
     width:50%;
+    min-width:350px;
 }
 .posterimg{
     width:250px;
@@ -32,7 +34,7 @@ flex-wrap: wrap;
     display:flex;
     flex-wrap:wrap;
     overflow:auto;
-
+    min-width: 367px;
 }
 .similardiv{
 position:relative;
@@ -47,6 +49,7 @@ margin:0 10px;
 }
 .similarimg{
     height:100%;
+    width:96px;
 }
 .genre{
     display:flex;
@@ -94,12 +97,13 @@ margin: 0 auto;
 position:absolute;
 right:0px;
 height:91%;
-width:10px;
+width:30px;
 padding:0;
 opacity:0.5;
 display:none;
 cursor:pointer;
-
+border-radius:10px 0 0 10px;
+border:none;
 }
 .container-3{
 display:flex;
