@@ -1,5 +1,5 @@
 const img_path='https://image.tmdb.org/t/p/w';
-const api='1ab630ffc09a5481bbee1793d25ccf71';
+const api='1';
 
 var poster=document.querySelector(".poster");
 var title=document.querySelector(".title");
