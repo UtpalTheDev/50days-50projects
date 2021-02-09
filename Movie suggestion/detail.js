@@ -1,5 +1,5 @@
 const img_path='https://image.tmdb.org/t/p/w';
-const api='1';
+const api='';
 
 var poster=document.querySelector(".poster");
 var title=document.querySelector(".title");
@@ -146,10 +146,14 @@ function cast(){
        // console.log(json);
         (json.cast).forEach(item=>{
             var {name,profile_path,character}=item;
+            if(character.includes('uncredited')){
+                profile_path=null;
+
+            }
             if(profile_path!=null){
             var div=document.createElement('div');
             div.classList.add('cast');
-            div.innerHTML=`<img src='${img_path}200${profile_path}'  class='casting'><div class='castdesc'><div class=''castname>${name}</div>`;
+            div.innerHTML=`<img src='${img_path}200${profile_path}'  class='casting'><div class='castdesc'><div class='castname'>${name}<br>As ${character}</div>`;
             castdiv.appendChild(div);
             }
         })
@@ -166,19 +170,27 @@ function review(){
         (json.results).forEach(item=>{
             const {author,author_details,content,created_at}=item;
             var profile=author_details.avatar_path;
+            if(author_details.rating==null){
+                var rating="";
+            }
+            else{
             var rating=author_details.rating;
+            }
             var div=document.createElement('div');
-            div.classList.add('review');
-            div.innerHTML=`<div class="reviewpack">
+            div.classList.add('reviewpack');
+            div.innerHTML=`
             <div class="image">
-            <img src='${img_path}200${profile}'  class='avatar'>
+            <img src='${img_path}200${profile}' alt="" class='avatar'>
+            ${author}
+            <br>
+            ${rating}
             </div>
             <div class="revcontent">
-            ${author}
+            
             ${content}
-            ${created_at}
+            
             </div>
-            </div>`;
+            `;
             reviewdiv.appendChild(div);
         })
     })
