@@ -1,5 +1,5 @@
 const img_path='https://image.tmdb.org/t/p/w';
-const api='';
+const api='1ab630ffc09a5481bbee1793d25ccf71';
 
 var poster=document.querySelector(".poster");
 var title=document.querySelector(".title");
@@ -87,7 +87,7 @@ function setvideo(){
     fetch(video_url)
     .then(response=>response.json())
     .then(json=>{
-        console.log(json);
+       // console.log(json);
         (json.results).forEach(item=>{
             var {key}=item;
             var div=document.createElement('div');
@@ -109,7 +109,7 @@ function setvideo(){
   
 }
 function setoverview(over){
-    overview.innerHTML=`${over}`;
+    overview.innerHTML=`<span class=overviewheader">Overview</span><br>${over}`;
 
 }
 
@@ -143,7 +143,7 @@ function cast(){
     fetch(cast_url)
     .then(response=>response.json())
     .then(json=>{
-        console.log(json);
+       // console.log(json);
         (json.cast).forEach(item=>{
             var {name,profile_path,character}=item;
             if(profile_path!=null){
@@ -184,20 +184,46 @@ function review(){
     })
 }
 
-var bt=document.querySelector(".button");
+var btn2=document.querySelector(".button2");
 var pos=0;
-var prev;
+var prev=0;
 cont2.scrollLeft=0;
-bt.addEventListener('click',()=>{
-    prev=pos;
+btn.addEventListener('click',()=>{
+   
     pos+=200;
    cont2.scrollLeft=pos;
-   console.log("pos"+pos+"cont"+cont2.scrollLeft);
-   if(pos>cont2.scrollLeft){
-       console.log('ll');
-    cont2.scrollLeft=cont2.scrollWidth-cont2.scrollLeft;
-
+   console.log("right"+prev)
+   if(prev!=cont2.scrollLeft){
+       btn.style.display=`none`;
+       btn2.style.display=`block`;
    }
+   else{
+   prev=pos;
+   }
+  /* if(prev==cont2.scrollLeft){
+    console.log("truee");
+   }
+   prev=cont2.scrollLeft;*/
+   console.log("right pos"+pos+"cont"+cont2.scrollLeft);
+  
+})
+btn2.addEventListener('click',()=>{
+   
+    pos-=200;
+   cont2.scrollLeft=pos;
+   if(pos==0){
+       btn2.style.display=`none`;
+       btn.style.display=`block`;
+       prev=0;
+       console.log(prev);
+   }
+  
+  /* if(prev==cont2.scrollLeft){
+    console.log("truee");
+   }
+   prev=cont2.scrollLeft;*/
+   console.log("left pos"+pos+"cont"+cont2.scrollLeft);
+  
 })
 
 function errorhandle(){
