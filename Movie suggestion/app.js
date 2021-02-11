@@ -1,4 +1,5 @@
 const api_key='';
+
 const Api_Url=`https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}`;
 const img_path='https://image.tmdb.org/t/p/w1280';
 const search_url=`https://api.themoviedb.org/3/search/movie?api_key=${api_key} &query=`;

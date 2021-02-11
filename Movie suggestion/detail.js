@@ -1,6 +1,5 @@
 const img_path='https://image.tmdb.org/t/p/w';
 const api='';
-
 var poster=document.querySelector(".poster");
 var title=document.querySelector(".title");
 var genre=document.querySelector(".genre");
