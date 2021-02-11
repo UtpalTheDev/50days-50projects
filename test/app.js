@@ -1,2 +1,2 @@
 //require('dotenv').config();
-console.log(config.mykey);
+console.log(process.env.a);
