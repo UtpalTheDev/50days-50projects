@@ -83,7 +83,8 @@ function setgenre(setgenre){
     })
 }
 function setdate(date){
-    releasedate.innerHTML=`${date}`;
+    var str=date.substr(0,4)
+    releasedate.innerHTML=`${str}`;
 }
 function setvideo(){
     const video_url=`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api}&language=en-US`
@@ -112,12 +113,12 @@ function setvideo(){
   
 }
 function setoverview(over){
-    overview.innerHTML=`<span class=overviewheader">Overview</span><br>${over}`;
+    overview.innerHTML=`<div class="overviewheader">Overview</div>${over}`;
 
 }
 
 function setrating(rate){
-    voteavg.innerHTML=`<span class="votespan">Vote: ${rate}</span>`;
+    voteavg.innerHTML=`<span class="votespan">❤️ ${rate}</span>`;
 }
 function setbrand(brand){
     brand.forEach(item=>{
@@ -169,7 +170,7 @@ function cast(){
             if(profile_path!=null){
             var div=document.createElement('div');
             div.classList.add('cast');
-            div.innerHTML=`<img src='${img_path}200${profile_path}'  class='casting'><div class='castdesc'><div class='castname'>${name}<br>As ${character}</div>`;
+            div.innerHTML=`<img src='${img_path}200${profile_path}'  class='casting'><div class='castdesc'><div class='castname'>${name}<br><span class="character">As ${character}</span></div>`;
             castdiv.appendChild(div);
             }
         })
@@ -199,7 +200,7 @@ function review(){
             <img src='${img_path}200${profile}' alt="" class='avatar'>
             ${author}
             <br>
-            ${rating}
+            ⭐️${rating}
             </div>
             <div class="customborder"></div>
             <div class="revcontent">
