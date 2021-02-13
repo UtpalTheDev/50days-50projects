@@ -11,6 +11,8 @@ var overview=document.querySelector(".overview");
 var similarmovie=document.querySelector(".similarmovie");
 var reviewdiv=document.querySelector(".review");
 var btn=document.querySelector(".button");
+var voteavg=document.querySelector(".rating");
+var branding=document.querySelector(".production");
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -38,6 +40,8 @@ function call(search_url){
         setposter(img_path+'500'+json.poster_path);
         setgenre(json.genres);
         setdate(json.release_date);
+        setrating(json.vote_average);
+        setbrand(json.production_companies);
         setvideo();
         setoverview(json.overview);
     })
@@ -112,6 +116,19 @@ function setoverview(over){
 
 }
 
+function setrating(rate){
+    voteavg.innerHTML=`<span class="votespan">Vote: ${rate}</span>`;
+}
+function setbrand(brand){
+    brand.forEach(item=>{
+        if(item.logo_path!=null){
+        var div=document.createElement('div');
+        div.classList.add('productiondiv');
+        div.innerHTML=`<img src='${img_path}200${item.logo_path}' alt="">`;
+        branding.appendChild(div);
+        }
+    })
+}
 //externalid(external_url);
 /*
 function externalid(external_url){
@@ -184,6 +201,7 @@ function review(){
             <br>
             ${rating}
             </div>
+            <div class="customborder"></div>
             <div class="revcontent">
             
             ${content}
