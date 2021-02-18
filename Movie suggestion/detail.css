@@ -349,6 +349,24 @@ scrollbar-color:  rgb(213, 213, 213)rgb(243, 243, 243);
 
 }
 /*media query*/
-@media only screen and  (max-width:500px){
+@media only screen and  (max-width:1148px){
+   .castdiv{
+       width:100vw;
+       margin-top:40px;
+   }
+   .overviewcont{
+       width:99vw;
+   }
+   .overview{
+       width:95vw;
+   }
+   .similarmovie{
+       margin:40px 0;
+   }
+}
+@media only screen and  (max-width:420px){
 
+.revcontent{
+    display:none;
+}
 }
